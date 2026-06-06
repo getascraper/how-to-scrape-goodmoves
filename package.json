@@ -1,0 +1,44 @@
+{
+  "name": "how-to-scrape-goodmoves",
+  "version": "1.0.0",
+  "description": "Goodmoves jobs scraper and charity sector job data extraction. Extract titles, salaries, locations, apply links, and OSCR charity numbers from Goodmoves.org with this Apify actor. Free tier available.",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [
+    "goodmoves",
+    "scraper",
+    "apify",
+    "apify-actor",
+    "scotland",
+    "charity",
+    "nonprofit",
+    "jobs",
+    "voluntary-sector",
+    "oscr",
+    "scvo",
+    "data-extraction",
+    "json-ld",
+    "schema-org",
+    "JobPosting",
+    "salary-benchmark",
+    "recruitment",
+    "rag"
+  ],
+  "author": "devansh-365",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getascraper/how-to-scrape-goodmoves"
+  },
+  "homepage": "https://apify.com/devanshlive/goodmoves-jobs-scraper",
+  "bugs": {
+    "url": "https://github.com/getascraper/how-to-scrape-goodmoves/issues"
+  },
+  "dependencies": {
+    "apify-client": "^2.9.0",
+    "dotenv": "^16.4.0"
+  }
+}

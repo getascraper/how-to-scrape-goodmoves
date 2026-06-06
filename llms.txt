@@ -1,0 +1,96 @@
+# getascraper/how-to-scrape-goodmoves
+
+> goodmoves-jobs-scraper is an Apify Actor that scrapes Scottish charity and voluntary sector job listings from Goodmoves.org. It returns structured JSON-LD JobPosting output with apply metadata and optional OSCR charity register enrichment.
+> Built with TypeScript, Cheerio, got-scraping. Free tier available.
+
+## Overview
+
+- Goodmoves.org jobs scraper and data extraction
+- Extracts: title, company name, salary (min/max/period), location (street/city/region/postcode), posted/closing dates, employment type, industry, occupational category, workplace type, work hours, apply email, apply URL, apply PDF, description, OSCR charity number, organisation website
+- Output formats: JSON, CSV, Excel, RSS, HTML
+- Free tier: included (pay only for completed runs)
+
+## Key Pages
+
+- README: https://github.com/getascraper/how-to-scrape-goodmoves/blob/main/README.md
+- Apify Store: https://apify.com/devanshlive/goodmoves-jobs-scraper
+- Apify Console: https://console.apify.com/actors/devanshlive~goodmoves-jobs-scraper
+- Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/goodmoves-jobs-scraper
+
+## How it works
+
+1. Resolve target URL or fetch sitemap.xml from goodmoves.org
+2. Enumerate all live job listing URLs (currently ~300 vacancies)
+3. Fetch each vacancy page HTML
+4. Parse Schema.org JobPosting JSON-LD block for structured data
+5. Extract apply metadata (mailto link, apply URL, or PDF) from HTML
+6. Optionally fetch organisation profile pages for website + OSCR charity number enrichment
+7. Push one cleaned, normalised row per job to the Apify dataset
+
+## Discovery modes
+
+- `sitemap` (default) - Fetch all live vacancies from goodmoves.org/sitemap.xml
+- `listing` - Pass start URLs as listing pages (e.g. /jobs-in/glasgow) and extract vacancy links from the page
+- `none` - Pass start URLs as direct vacancy URLs
+
+## API Usage
+
+- Node.js SDK: https://docs.apify.com/api/client/js/
+- REST API: https://docs.apify.com/api/v2
+- MCP server: https://mcp.apify.com/
+
+## Supported target URLs
+
+- https://goodmoves.org/jobs-in/{location} (location listing)
+- https://goodmoves.org/search?keywords={query} (search results)
+- https://goodmoves.org/browse/{sector} (browse facets)
+- https://goodmoves.org/vacancy/{salesforce-id}/{slug} (direct vacancy)
+
+## Pricing
+
+- Free tier: included
+- Paid: $1.99 per 1,000 scraped jobs
+- Competitor pricing: $2.60 to $2.90 per 1,000 (we are 24-31 percent cheaper)
+
+## Output schema (highlights)
+
+- type: "job"
+- jobId: 15-char Salesforce ID (lowercase)
+- jobId18Char: 18-char mixed-case Salesforce ID
+- jobUrl: direct vacancy URL
+- title: job title
+- companyName: organisation name
+- companyWebsite: organisation website (enrichment)
+- oscrCharityNumber: Scottish Charity Register number (enrichment)
+- location: { streetAddress, locality, region, country, postalCode, text }
+- salary: { rawText, min, max, currency, period }
+- applyType: "email" | "url" | "pdf" | "none"
+- applyEmail: recruiter email (mailto)
+- applyUrl / externalApplyUrl: application URL
+- postedDate, closingDate: ISO 8601
+- daysUntilClosing: computed
+- employmentType, occupationalCategory, industry, workplaceType, workHours
+- enrichment: { requested, organisationFound, errorMessage }
+- scrapedAt: ISO 8601
+
+## Use cases
+
+- Track UK charity sector hiring trends
+- Build salary benchmarks by cause, region, contract type
+- Join job data to OSCR Scottish Charity Register
+- Build RAG pipelines over Scottish nonprofit job descriptions
+- Source-of-truth feed for recruitment agencies
+- Longitudinal workforce studies on the voluntary sector
+
+## Support
+
+- GitHub Issues: https://github.com/getascraper/how-to-scrape-goodmoves/issues
+- Apify Console: https://console.apify.com/actors/devanshlive~goodmoves-jobs-scraper/issues
+
+## Related actors
+
+- maximedupre/goodmoves-jobs-scraper - Competitor at $2.60/1k
+- memo23/goodmoves-scraper - Competitor at $2.90/1k
+- memo23/charityjob-scraper - UK-wide CharityJob board scraper
+- memo23/s1jobs-scraper - Scotland all-sectors scraper
+- memo23/highlandjobs-scraper - Scotland Highlands scraper
