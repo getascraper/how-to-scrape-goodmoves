@@ -2,7 +2,7 @@
 
 # Goodmoves Jobs Scraper | Charity Sector Jobs API | Apify Actor
 
-[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/devanshlive/goodmoves-jobs-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/devanshlive/goodmoves-jobs-scraper/apify/console) [![JSON-LD](https://img.shields.io/badge/Schema.org-JobPosting-ff6b35?style=for-the-badge)](https://schema.org/JobPosting)
+[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/getascraper/goodmoves-jobs-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/getascraper/goodmoves-jobs-scraper/apify/console) [![JSON-LD](https://img.shields.io/badge/Schema.org-JobPosting-ff6b35?style=for-the-badge)](https://schema.org/JobPosting)
 
 **Goodmoves scraper and charity sector job data extraction API for Scottish nonprofits.** Pull titles, employers, salaries, locations, apply links, OSCR charity numbers, and organisation websites from Goodmoves.org with this Apify Actor. Free tier included.
 
@@ -10,7 +10,7 @@ Pull structured Scottish voluntary sector job postings as JSON-LD with apply met
 
 [Quick Start](#quick-start) · [Output Schema](#output-schema) · [Pricing](#pricing) · [FAQ](#faq)
 
-[![Apify Actor Hero](https://raw.githubusercontent.com/getascraper/how-to-scrape-goodmoves/main/docs/hero-screenshot.png)](https://apify.com/devanshlive/goodmoves-jobs-scraper)
+[![Apify Actor Hero](https://raw.githubusercontent.com/getascraper/how-to-scrape-goodmoves/main/docs/hero-screenshot.png)](https://apify.com/getascraper/goodmoves-jobs-scraper)
 
 </div>
 
@@ -43,7 +43,7 @@ import { ApifyClient } from 'apify-client';
 
 const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
 
-const run = await client.actor('devanshlive/goodmoves-jobs-scraper').call({
+const run = await client.actor('getascraper/goodmoves-jobs-scraper').call({
   discoveryMode: 'sitemap',
   maxItems: 100,
   includeOrganisationDetails: true,
@@ -55,7 +55,7 @@ console.log(items);
 
 ## How to use
 
-1. Open the Actor in [Apify Console](https://apify.com/devanshlive/goodmoves-jobs-scraper)
+1. Open the Actor in [Apify Console](https://apify.com/getascraper/goodmoves-jobs-scraper)
 2. Set **Discovery mode** to `Sitemap` to fetch all live vacancies (default), or `Listing` for a specific region
 3. Optionally add Goodmoves URLs (listing, search, browse, or direct vacancy)
 4. Set **Maximum jobs** (default 100, max 5000)
@@ -202,7 +202,7 @@ We are 24 to 31 percent cheaper than the two main Goodmoves Actors on Apify Stor
 
 ## Support
 
-For issues, questions, or feature requests, file a ticket in the [Apify Console](https://console.apify.com/actors/devanshlive~goodmoves-jobs-scraper/issues).
+For issues, questions, or feature requests, file a ticket in the [Apify Console](https://console.apify.com/actors/getascraper~goodmoves-jobs-scraper/issues).
 
 ## Related resources
 

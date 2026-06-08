@@ -33,7 +33,7 @@
     "type": "git",
     "url": "https://github.com/getascraper/how-to-scrape-goodmoves"
   },
-  "homepage": "https://apify.com/devanshlive/goodmoves-jobs-scraper",
+  "homepage": "https://apify.com/getascraper/goodmoves-jobs-scraper",
   "bugs": {
     "url": "https://github.com/getascraper/how-to-scrape-goodmoves/issues"
   },

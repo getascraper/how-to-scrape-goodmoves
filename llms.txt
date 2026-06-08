@@ -13,8 +13,8 @@
 ## Key Pages
 
 - README: https://github.com/getascraper/how-to-scrape-goodmoves/blob/main/README.md
-- Apify Store: https://apify.com/devanshlive/goodmoves-jobs-scraper
-- Apify Console: https://console.apify.com/actors/devanshlive~goodmoves-jobs-scraper
+- Apify Store: https://apify.com/getascraper/goodmoves-jobs-scraper
+- Apify Console: https://console.apify.com/actors/getascraper~goodmoves-jobs-scraper
 - Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/goodmoves-jobs-scraper
 
 ## How it works
@@ -85,7 +85,7 @@
 ## Support
 
 - GitHub Issues: https://github.com/getascraper/how-to-scrape-goodmoves/issues
-- Apify Console: https://console.apify.com/actors/devanshlive~goodmoves-jobs-scraper/issues
+- Apify Console: https://console.apify.com/actors/getascraper~goodmoves-jobs-scraper/issues
 
 ## Related actors
 
